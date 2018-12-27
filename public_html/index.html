@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+    <body>
+        <!--        <ul class="nav" data-wall-section-nav>
+          <li class="nav-link">First</li>
+          <li class="nav-link">Second</li>
+          <li class="nav-link">Third</li>
+        </ul>-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                            data-target="#navbar-collapse-main">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                    <ul class="nav navbar-nav navbar-left" data-wall-section-nav>
+                        <li><a class="nav-link">Home</a></li>
+                        <li><a class="nav-link">About</a></li>
+                        <li><a class="nav-link">Projects</a></li>
+                        <li><a class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div id="wall">
+            <section class="section section-1">
+                Section 1
+                <div class="landing-text">
+                        <h5>Ivan Žarković</h5>
+                        
+                    </div>
+                <div class="subheader">
+                    <h6>Front-End Java developer</h6>
+                </div>
+                
+            </section>
+            <section class="section section-2">
+                <div class="slide" style="background-color: #0277bd" data-wall-slide>
+                    <div class="wrapper">
+                        <h1>Projects</h1>
+                        <div class="padding">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="img/project1.jpg">
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <h2>Project name</h2>
+                                        <p class="lead">Some dummy text for explaining project, 
+                                            a short brief of an current project 
+                                            and short review of functionalities 
+                                            and frame works used. Should'n be too 
+                                            long nor too short, will be adjusted to
+                                            fit small screen size</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" style="background-color: #ffa000" data-wall-slide>
+                    <div class="wrapper">
+                        <h1>Section 2</h1>
+                    </div>
+                </div>
+                <div data-wall-slide-arrow class="prev-slide"></div>
+                <div data-wall-slide-arrow class="next-slide"></div>
+            </section>
+            <section class="section section-3">
+                Section 3
+            </section>
+            <section class="section section-4">
+                Section 4
+            </section>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div id="prev" class="btn btn-secondary"></div>
+        <div id="next" class="btn btn-primary"></div>
+        <ul class="dot" data-wall-section-nav>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <script src="wall.js"></script>
+        <script>
+            var wall = new Wall('#wall');
+            document.getElementById('prev').addEventListener('click', function () {
+                wall.prevSection();
+            });
+
+            document.getElementById('next').addEventListener('click', function () {
+                wall.nextSection();
+            });
+
+            document.querySelector('.prev-slide').addEventListener('click', function () {
+                wall.prevSlide();
+            });
+
+            document.querySelector('.next-slide').addEventListener('click', function () {
+                wall.nextSlide();
+            });
+
+
+            var wall = new Wall('#wall', {
+                wrapperZIndex: 1,
+                sectionAnimateDuration: 1,
+                easeFunction: 'easeIn',
+                loopToBottom: false,
+                loopToTop: false,
+                sectionNavItemActiveClass: 'active',
+                animatingClass: 'animating',
+                currentClass: 'current'
+            });
+
+        </script>
+    </body>
+
+</html>
